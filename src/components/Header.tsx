@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,37 +33,37 @@ const Header = () => {
     >
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
-          <a href="/" className="flex items-center space-x-2 group">
+          <Link to="/" className="flex items-center space-x-2 group">
             <Smartphone className="h-6 w-6 text-primary transition-transform duration-300 group-hover:scale-110" />
             <span className="font-semibold text-xl tracking-tight">CompareSense</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a 
-              href="#plans" 
+            <Link 
+              to="/forfaits" 
               className="text-foreground/80 hover:text-primary transition-colors duration-200"
             >
               Forfaits
-            </a>
-            <a 
-              href="#providers" 
+            </Link>
+            <Link 
+              to="/operateurs" 
               className="text-foreground/80 hover:text-primary transition-colors duration-200"
             >
               Opérateurs
-            </a>
-            <a 
-              href="#compare" 
+            </Link>
+            <Link 
+              to="/comparer" 
               className="text-foreground/80 hover:text-primary transition-colors duration-200"
             >
               Comparer
-            </a>
-            <a 
-              href="#guides" 
+            </Link>
+            <Link 
+              to="/guides" 
               className="text-foreground/80 hover:text-primary transition-colors duration-200"
             >
               Guides
-            </a>
+            </Link>
           </nav>
 
           <div className="hidden md:block">
@@ -92,34 +93,34 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 glass animate-fade-in border-b">
           <div className="container py-6 flex flex-col space-y-4">
-            <a 
-              href="#plans" 
+            <Link 
+              to="/forfaits" 
               className="px-4 py-2 text-foreground/80 hover:text-primary transition-colors duration-200"
               onClick={toggleMenu}
             >
               Forfaits
-            </a>
-            <a 
-              href="#providers" 
+            </Link>
+            <Link 
+              to="/operateurs" 
               className="px-4 py-2 text-foreground/80 hover:text-primary transition-colors duration-200"
               onClick={toggleMenu}
             >
               Opérateurs
-            </a>
-            <a 
-              href="#compare" 
+            </Link>
+            <Link 
+              to="/comparer" 
               className="px-4 py-2 text-foreground/80 hover:text-primary transition-colors duration-200"
               onClick={toggleMenu}
             >
               Comparer
-            </a>
-            <a 
-              href="#guides" 
+            </Link>
+            <Link 
+              to="/guides" 
               className="px-4 py-2 text-foreground/80 hover:text-primary transition-colors duration-200"
               onClick={toggleMenu}
             >
               Guides
-            </a>
+            </Link>
             <Button 
               className="hover-effect mt-2 rounded-full"
               onClick={toggleMenu}
