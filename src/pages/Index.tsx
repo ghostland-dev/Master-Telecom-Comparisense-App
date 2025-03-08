@@ -1,12 +1,77 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useRef } from 'react';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import PlanComparison from '@/components/PlanComparison';
+import FeaturedPlan from '@/components/FeaturedPlan';
+import Footer from '@/components/Footer';
+import { phonePlans } from '@/data/plans';
 
 const Index = () => {
+  const plansRef = useRef<HTMLDivElement>(null);
+  
+  const scrollToPlans = () => {
+    plansRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+  
+  const featuredPlans = phonePlans.filter(plan => plan.isFeatured);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      
+      <main>
+        <Hero scrollToPlans={scrollToPlans} />
+        
+        <section className="py-20 px-6 bg-background" ref={plansRef}>
+          <div className="container mx-auto">
+            <div className="text-center mb-16 animate-fade-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Plans</h2>
+              <p className="text-foreground/70 max-w-2xl mx-auto">
+                Compare our top picks for the best value phone plans on the market today.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+              {featuredPlans.map((plan) => (
+                <div key={plan.id} className="animate-scale-in">
+                  <FeaturedPlan plan={plan} />
+                </div>
+              ))}
+            </div>
+            
+            <div className="text-center mb-16 animate-fade-up">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Compare All Plans</h2>
+              <p className="text-foreground/70 max-w-2xl mx-auto">
+                Find the perfect phone plan for your needs with our comprehensive comparison tool.
+              </p>
+            </div>
+            
+            <div className="animate-fade-up">
+              <PlanComparison plans={phonePlans} />
+            </div>
+          </div>
+        </section>
+        
+        <section className="py-20 px-6 animated-gradient">
+          <div className="container mx-auto">
+            <div className="glass border border-border/50 rounded-2xl p-8 md:p-12 text-center animate-scale-in">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Find Your Ideal Plan?</h2>
+              <p className="text-foreground/70 max-w-2xl mx-auto mb-8">
+                Our comparison tool makes it easy to find the perfect phone plan at the best price.
+              </p>
+              <button 
+                onClick={scrollToPlans}
+                className="bg-primary text-primary-foreground py-3 px-8 rounded-full font-medium hover-effect"
+              >
+                Compare Plans Now
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <Footer />
     </div>
   );
 };
