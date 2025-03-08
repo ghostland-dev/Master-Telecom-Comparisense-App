@@ -389,7 +389,7 @@ const FilterBar = ({ filterOptions, setFilterOptions }: FilterBarProps) => {
               
               {filterOptions.dataAmount.includes('low') && (
                 <Badge variant="outline" className="flex items-center gap-1">
-                  <span>< 50 Go</span>
+                  <span>{"<"} 50 Go</span>
                   <X 
                     size={14} 
                     className="cursor-pointer" 
@@ -417,7 +417,7 @@ const FilterBar = ({ filterOptions, setFilterOptions }: FilterBarProps) => {
               
               {filterOptions.dataAmount.includes('high') && (
                 <Badge variant="outline" className="flex items-center gap-1">
-                  <span>> 150 Go</span>
+                  <span>{">"} 150 Go</span>
                   <X 
                     size={14} 
                     className="cursor-pointer" 
