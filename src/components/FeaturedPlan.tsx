@@ -17,7 +17,7 @@ const FeaturedPlan = ({ plan }: FeaturedPlanProps) => {
     )}>
       {plan.isSponsored && (
         <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-2 py-1 text-xs font-medium rounded-bl-lg rounded-tr-lg z-10">
-          Sponsored
+          Sponsorisé
         </div>
       )}
       
@@ -36,17 +36,17 @@ const FeaturedPlan = ({ plan }: FeaturedPlanProps) => {
         </div>
         
         <div className="flex items-baseline mb-6">
-          <span className="text-3xl font-bold">€{plan.price.toFixed(2)}</span>
-          <span className="text-sm text-foreground/70 ml-1">/month</span>
+          <span className="text-3xl font-bold">{plan.price.toFixed(2)}€</span>
+          <span className="text-sm text-foreground/70 ml-1">/mois</span>
         </div>
         
         <div className="space-y-3 mb-6">
           <div className="flex justify-between">
-            <span className="text-sm text-foreground/70">Data</span>
+            <span className="text-sm text-foreground/70">Données</span>
             <span className="font-medium">{plan.data}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-sm text-foreground/70">Calls</span>
+            <span className="text-sm text-foreground/70">Appels</span>
             <span className="font-medium">{plan.calls}</span>
           </div>
           <div className="flex justify-between">
@@ -54,33 +54,50 @@ const FeaturedPlan = ({ plan }: FeaturedPlanProps) => {
             <span className="font-medium">{plan.sms}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-sm text-foreground/70">Contract</span>
-            <span className="font-medium">{plan.commitment}</span>
+            <span className="text-sm text-foreground/70">Engagement</span>
+            <span className="font-medium">{plan.commitment === 'No contract' ? 'Sans engagement' : 
+              plan.commitment === '12 months' ? '12 mois' : 
+              plan.commitment === '24 months' ? '24 mois' : plan.commitment}</span>
           </div>
         </div>
         
         <div className="border-t border-border/50 pt-4 mb-6">
-          <h4 className="text-sm font-medium mb-2">Features</h4>
+          <h4 className="text-sm font-medium mb-2">Caractéristiques</h4>
           <ul className="space-y-2">
             {plan.features.map((feature, index) => (
               <li key={index} className="flex items-center text-sm">
                 <CheckCircle className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
-                <span>{feature}</span>
+                <span>{translateFeature(feature)}</span>
               </li>
             ))}
           </ul>
         </div>
         
         <div className="mt-auto">
-          <Button className="w-full rounded-xl hover-effect">View Plan</Button>
+          <Button className="w-full rounded-xl hover-effect">Voir le forfait</Button>
           <div className="flex items-center justify-center mt-3">
             <Info className="w-4 h-4 text-foreground/60 mr-1" />
-            <span className="text-xs text-foreground/60">Transparent pricing</span>
+            <span className="text-xs text-foreground/60">Prix transparent</span>
           </div>
         </div>
       </div>
     </div>
   );
+};
+
+// Fonction utilitaire pour traduire les caractéristiques
+const translateFeature = (feature: string): string => {
+  const translations: Record<string, string> = {
+    'EU Roaming': 'Itinérance UE',
+    '5G Network': 'Réseau 5G',
+    'Mobile Hotspot': 'Partage de connexion',
+    'Family Discounts': 'Réductions famille',
+    'Unlimited Data': 'Données illimitées',
+    'Premium Support': 'Support premium',
+    'Music Streaming Included': 'Streaming musical inclus'
+  };
+
+  return translations[feature] || feature;
 };
 
 export default FeaturedPlan;

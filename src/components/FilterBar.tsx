@@ -89,7 +89,7 @@ const FilterBar = ({ filterOptions, setFilterOptions }: FilterBarProps) => {
       <div className="p-6 flex items-center justify-between cursor-pointer" onClick={() => setIsExpanded(!isExpanded)}>
         <div className="flex items-center gap-2">
           <Filter className="w-5 h-5 text-primary" />
-          <h3 className="font-medium">Filter Plans</h3>
+          <h3 className="font-medium">Filtrer les forfaits</h3>
         </div>
         <Button variant="ghost" size="icon" className="h-8 w-8">
           {isExpanded ? <ChevronUp /> : <ChevronDown />}
@@ -102,7 +102,7 @@ const FilterBar = ({ filterOptions, setFilterOptions }: FilterBarProps) => {
       )}>
         {/* Price Range */}
         <div>
-          <h4 className="text-sm font-medium mb-3">Price Range</h4>
+          <h4 className="text-sm font-medium mb-3">Fourchette de prix</h4>
           <div className="space-y-6">
             <Slider 
               defaultValue={[filterOptions.minPrice, filterOptions.maxPrice]} 
@@ -112,15 +112,15 @@ const FilterBar = ({ filterOptions, setFilterOptions }: FilterBarProps) => {
               className="my-6"
             />
             <div className="flex justify-between text-sm">
-              <span>€{filterOptions.minPrice}</span>
-              <span>€{filterOptions.maxPrice}</span>
+              <span>{filterOptions.minPrice}€</span>
+              <span>{filterOptions.maxPrice}€</span>
             </div>
           </div>
         </div>
         
         {/* Data Amount */}
         <div>
-          <h4 className="text-sm font-medium mb-3">Data Amount</h4>
+          <h4 className="text-sm font-medium mb-3">Volume de données</h4>
           <div className="space-y-2">
             <div className="flex items-center space-x-2">
               <Checkbox 
@@ -128,7 +128,7 @@ const FilterBar = ({ filterOptions, setFilterOptions }: FilterBarProps) => {
                 checked={filterOptions.dataAmount.includes('low')}
                 onCheckedChange={() => toggleDataFilter('low')}
               />
-              <label htmlFor="data-low" className="text-sm cursor-pointer">Less than 50GB</label>
+              <label htmlFor="data-low" className="text-sm cursor-pointer">Moins de 50 Go</label>
             </div>
             <div className="flex items-center space-x-2">
               <Checkbox 
@@ -136,7 +136,7 @@ const FilterBar = ({ filterOptions, setFilterOptions }: FilterBarProps) => {
                 checked={filterOptions.dataAmount.includes('medium')}
                 onCheckedChange={() => toggleDataFilter('medium')}
               />
-              <label htmlFor="data-medium" className="text-sm cursor-pointer">50GB - 150GB</label>
+              <label htmlFor="data-medium" className="text-sm cursor-pointer">50 Go - 150 Go</label>
             </div>
             <div className="flex items-center space-x-2">
               <Checkbox 
@@ -144,7 +144,7 @@ const FilterBar = ({ filterOptions, setFilterOptions }: FilterBarProps) => {
                 checked={filterOptions.dataAmount.includes('high')}
                 onCheckedChange={() => toggleDataFilter('high')}
               />
-              <label htmlFor="data-high" className="text-sm cursor-pointer">More than 150GB</label>
+              <label htmlFor="data-high" className="text-sm cursor-pointer">Plus de 150 Go</label>
             </div>
             <div className="flex items-center space-x-2">
               <Checkbox 
@@ -152,7 +152,7 @@ const FilterBar = ({ filterOptions, setFilterOptions }: FilterBarProps) => {
                 checked={filterOptions.dataAmount.includes('unlimited')}
                 onCheckedChange={() => toggleDataFilter('unlimited')}
               />
-              <label htmlFor="data-unlimited" className="text-sm cursor-pointer">Unlimited</label>
+              <label htmlFor="data-unlimited" className="text-sm cursor-pointer">Illimité</label>
             </div>
           </div>
         </div>
@@ -160,7 +160,7 @@ const FilterBar = ({ filterOptions, setFilterOptions }: FilterBarProps) => {
         <div className="grid grid-cols-1 gap-6">
           {/* Contract Type */}
           <div>
-            <h4 className="text-sm font-medium mb-3">Contract Type</h4>
+            <h4 className="text-sm font-medium mb-3">Type d'engagement</h4>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Checkbox 
@@ -168,7 +168,7 @@ const FilterBar = ({ filterOptions, setFilterOptions }: FilterBarProps) => {
                   checked={filterOptions.commitment.includes('No contract')}
                   onCheckedChange={() => toggleCommitmentFilter('No contract')}
                 />
-                <label htmlFor="commitment-none" className="text-sm cursor-pointer">No Contract</label>
+                <label htmlFor="commitment-none" className="text-sm cursor-pointer">Sans engagement</label>
               </div>
               <div className="flex items-center space-x-2">
                 <Checkbox 
@@ -176,7 +176,7 @@ const FilterBar = ({ filterOptions, setFilterOptions }: FilterBarProps) => {
                   checked={filterOptions.commitment.includes('12 months')}
                   onCheckedChange={() => toggleCommitmentFilter('12 months')}
                 />
-                <label htmlFor="commitment-12" className="text-sm cursor-pointer">12 Months</label>
+                <label htmlFor="commitment-12" className="text-sm cursor-pointer">12 mois</label>
               </div>
               <div className="flex items-center space-x-2">
                 <Checkbox 
@@ -184,14 +184,14 @@ const FilterBar = ({ filterOptions, setFilterOptions }: FilterBarProps) => {
                   checked={filterOptions.commitment.includes('24 months')}
                   onCheckedChange={() => toggleCommitmentFilter('24 months')}
                 />
-                <label htmlFor="commitment-24" className="text-sm cursor-pointer">24 Months</label>
+                <label htmlFor="commitment-24" className="text-sm cursor-pointer">24 mois</label>
               </div>
             </div>
           </div>
           
           {/* Network */}
           <div>
-            <h4 className="text-sm font-medium mb-3">Network</h4>
+            <h4 className="text-sm font-medium mb-3">Réseau</h4>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Checkbox 
@@ -216,9 +216,9 @@ const FilterBar = ({ filterOptions, setFilterOptions }: FilterBarProps) => {
         {/* Filter actions */}
         <div className="col-span-1 md:col-span-3 flex justify-end">
           <Button variant="outline" onClick={resetFilters} className="mr-2">
-            Reset Filters
+            Réinitialiser les filtres
           </Button>
-          <Button>Apply Filters</Button>
+          <Button>Appliquer les filtres</Button>
         </div>
       </div>
     </div>

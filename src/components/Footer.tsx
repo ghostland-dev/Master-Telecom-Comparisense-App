@@ -16,7 +16,7 @@ const Footer = () => {
               <span className="font-semibold text-xl tracking-tight">CompareSense</span>
             </div>
             <p className="text-foreground/70 mb-6 max-w-xs">
-              Helping you find the perfect phone plan with transparent, unbiased comparisons.
+              Nous vous aidons à trouver le forfait téléphonique idéal avec des comparaisons transparentes et impartiales.
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-2 text-sm">
@@ -27,24 +27,24 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-2">
-            <h4 className="font-medium mb-4">Company</h4>
+            <h4 className="font-medium mb-4">Entreprise</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-foreground/70 hover:text-primary text-sm transition-colors duration-200 inline-flex items-center">
                   <ChevronRight className="h-3 w-3 mr-1" />
-                  About Us
+                  À propos
                 </a>
               </li>
               <li>
                 <a href="#" className="text-foreground/70 hover:text-primary text-sm transition-colors duration-200 inline-flex items-center">
                   <ChevronRight className="h-3 w-3 mr-1" />
-                  Careers
+                  Carrières
                 </a>
               </li>
               <li>
                 <a href="#" className="text-foreground/70 hover:text-primary text-sm transition-colors duration-200 inline-flex items-center">
                   <ChevronRight className="h-3 w-3 mr-1" />
-                  Partners
+                  Partenaires
                 </a>
               </li>
               <li>
@@ -57,7 +57,7 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-2">
-            <h4 className="font-medium mb-4">Resources</h4>
+            <h4 className="font-medium mb-4">Ressources</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-foreground/70 hover:text-primary text-sm transition-colors duration-200 inline-flex items-center">
@@ -87,17 +87,17 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-4">
-            <h4 className="font-medium mb-4">Subscribe to our Newsletter</h4>
+            <h4 className="font-medium mb-4">Abonnez-vous à notre newsletter</h4>
             <p className="text-foreground/70 text-sm mb-4">
-              Get the latest updates, deals and offers straight to your inbox.
+              Recevez les dernières mises à jour, offres et promotions directement dans votre boîte de réception.
             </p>
             <div className="flex space-x-2">
               <Input 
                 type="email" 
-                placeholder="Your email address" 
+                placeholder="Votre adresse email" 
                 className="bg-secondary/50 border-secondary" 
               />
-              <Button>Subscribe</Button>
+              <Button>S'abonner</Button>
             </div>
           </div>
         </div>
@@ -106,18 +106,18 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-foreground/60">
           <div className="mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} CompareSense. All rights reserved.
+            &copy; {new Date().getFullYear()} CompareSense. Tous droits réservés.
           </div>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-primary transition-colors duration-200">Terms</a>
-            <a href="#" className="hover:text-primary transition-colors duration-200">Privacy</a>
+            <a href="#" className="hover:text-primary transition-colors duration-200">Conditions</a>
+            <a href="#" className="hover:text-primary transition-colors duration-200">Confidentialité</a>
             <a href="#" className="hover:text-primary transition-colors duration-200">Cookies</a>
           </div>
         </div>
         
         <div className="mt-8 text-center text-xs text-foreground/40">
           <p className="flex items-center justify-center">
-            Made with <Heart className="h-3 w-3 mx-1 text-primary" /> for transparent comparisons
+            Conçu avec <Heart className="h-3 w-3 mx-1 text-primary" /> pour des comparaisons transparentes
           </p>
         </div>
       </div>

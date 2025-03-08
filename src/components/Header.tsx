@@ -43,19 +43,19 @@ const Header = () => {
               href="#plans" 
               className="text-foreground/80 hover:text-primary transition-colors duration-200"
             >
-              Plans
+              Forfaits
             </a>
             <a 
               href="#providers" 
               className="text-foreground/80 hover:text-primary transition-colors duration-200"
             >
-              Providers
+              Opérateurs
             </a>
             <a 
               href="#compare" 
               className="text-foreground/80 hover:text-primary transition-colors duration-200"
             >
-              Compare
+              Comparer
             </a>
             <a 
               href="#guides" 
@@ -69,7 +69,7 @@ const Header = () => {
             <Button 
               className="hover-effect rounded-full bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20"
             >
-              Get Started
+              Commencer
             </Button>
           </div>
 
@@ -77,7 +77,7 @@ const Header = () => {
           <button 
             className="md:hidden focus:outline-none"
             onClick={toggleMenu}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           >
             {isMenuOpen ? (
               <X className="h-6 w-6" />
@@ -97,21 +97,21 @@ const Header = () => {
               className="px-4 py-2 text-foreground/80 hover:text-primary transition-colors duration-200"
               onClick={toggleMenu}
             >
-              Plans
+              Forfaits
             </a>
             <a 
               href="#providers" 
               className="px-4 py-2 text-foreground/80 hover:text-primary transition-colors duration-200"
               onClick={toggleMenu}
             >
-              Providers
+              Opérateurs
             </a>
             <a 
               href="#compare" 
               className="px-4 py-2 text-foreground/80 hover:text-primary transition-colors duration-200"
               onClick={toggleMenu}
             >
-              Compare
+              Comparer
             </a>
             <a 
               href="#guides" 
@@ -124,7 +124,7 @@ const Header = () => {
               className="hover-effect mt-2 rounded-full"
               onClick={toggleMenu}
             >
-              Get Started
+              Commencer
             </Button>
           </div>
         </div>

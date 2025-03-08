@@ -17,16 +17,16 @@ const Hero = ({ scrollToPlans }: HeroProps) => {
         <div className="animate-fade-up" style={{ animationDelay: '0.1s' }}>
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary mb-6">
             <Smartphone className="w-4 h-4 mr-2" />
-            <span className="text-sm font-medium">Find Your Perfect Phone Plan</span>
+            <span className="text-sm font-medium">Trouvez votre forfait idéal</span>
           </div>
         </div>
         
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-          Compare. Choose. <span className="text-primary">Save.</span>
+          Comparez. Choisissez. <span className="text-primary">Économisez.</span>
         </h1>
         
         <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mb-10 animate-fade-up" style={{ animationDelay: '0.3s' }}>
-          Discover the best phone plans tailored to your needs. Transparent comparisons help you make the right choice.
+          Découvrez les meilleurs forfaits téléphoniques adaptés à vos besoins. Des comparaisons transparentes pour vous aider à faire le bon choix.
         </p>
         
         <div className="flex flex-col md:flex-row gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
@@ -35,14 +35,14 @@ const Hero = ({ scrollToPlans }: HeroProps) => {
             className="hover-effect rounded-full text-base px-6"
             onClick={scrollToPlans}
           >
-            Compare Plans
+            Comparer les forfaits
           </Button>
           <Button 
             variant="outline" 
             size="lg" 
             className="hover-effect rounded-full text-base px-6"
           >
-            View Providers
+            Voir les opérateurs
           </Button>
         </div>
       </div>
@@ -56,24 +56,24 @@ const Hero = ({ scrollToPlans }: HeroProps) => {
           <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
             <Signal className="w-6 h-6 text-primary" />
           </div>
-          <h3 className="font-medium text-lg mb-2">Best Coverage</h3>
-          <p className="text-foreground/70 text-sm">Compare network coverage across all major providers</p>
+          <h3 className="font-medium text-lg mb-2">Meilleure couverture</h3>
+          <p className="text-foreground/70 text-sm">Comparez la couverture réseau de tous les principaux opérateurs</p>
         </div>
         
         <div className="flex flex-col items-center text-center">
           <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
             <Percent className="w-6 h-6 text-primary" />
           </div>
-          <h3 className="font-medium text-lg mb-2">Save Money</h3>
-          <p className="text-foreground/70 text-sm">Find the most affordable plans that match your needs</p>
+          <h3 className="font-medium text-lg mb-2">Économisez</h3>
+          <p className="text-foreground/70 text-sm">Trouvez les forfaits les plus abordables qui correspondent à vos besoins</p>
         </div>
         
         <div className="flex flex-col items-center text-center">
           <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
             <Smartphone className="w-6 h-6 text-primary" />
           </div>
-          <h3 className="font-medium text-lg mb-2">Tailored Plans</h3>
-          <p className="text-foreground/70 text-sm">Get personalized recommendations based on your usage</p>
+          <h3 className="font-medium text-lg mb-2">Forfaits personnalisés</h3>
+          <p className="text-foreground/70 text-sm">Obtenez des recommandations personnalisées selon votre utilisation</p>
         </div>
       </div>
       
@@ -82,9 +82,9 @@ const Hero = ({ scrollToPlans }: HeroProps) => {
         <button 
           onClick={scrollToPlans} 
           className="flex flex-col items-center text-foreground/60 hover:text-primary transition-colors"
-          aria-label="Scroll down"
+          aria-label="Défiler vers le bas"
         >
-          <span className="text-sm mb-2">Scroll to explore</span>
+          <span className="text-sm mb-2">Défiler pour explorer</span>
           <ChevronDown className="w-6 h-6" />
         </button>
       </div>

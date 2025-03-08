@@ -26,9 +26,9 @@ const Index = () => {
         <section className="py-20 px-6 bg-background" ref={plansRef}>
           <div className="container mx-auto">
             <div className="text-center mb-16 animate-fade-up">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Plans</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Forfaits en vedette</h2>
               <p className="text-foreground/70 max-w-2xl mx-auto">
-                Compare our top picks for the best value phone plans on the market today.
+                Comparez nos meilleures sélections de forfaits téléphoniques offrant le meilleur rapport qualité-prix.
               </p>
             </div>
             
@@ -41,9 +41,9 @@ const Index = () => {
             </div>
             
             <div className="text-center mb-16 animate-fade-up">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Compare All Plans</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Comparer tous les forfaits</h2>
               <p className="text-foreground/70 max-w-2xl mx-auto">
-                Find the perfect phone plan for your needs with our comprehensive comparison tool.
+                Trouvez le forfait téléphonique parfait pour vos besoins avec notre outil de comparaison complet.
               </p>
             </div>
             
@@ -56,15 +56,15 @@ const Index = () => {
         <section className="py-20 px-6 animated-gradient">
           <div className="container mx-auto">
             <div className="glass border border-border/50 rounded-2xl p-8 md:p-12 text-center animate-scale-in">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Find Your Ideal Plan?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Prêt à trouver votre forfait idéal ?</h2>
               <p className="text-foreground/70 max-w-2xl mx-auto mb-8">
-                Our comparison tool makes it easy to find the perfect phone plan at the best price.
+                Notre outil de comparaison vous permet de trouver facilement le forfait téléphonique parfait au meilleur prix.
               </p>
               <button 
                 onClick={scrollToPlans}
                 className="bg-primary text-primary-foreground py-3 px-8 rounded-full font-medium hover-effect"
               >
-                Compare Plans Now
+                Comparer les forfaits maintenant
               </button>
             </div>
           </div>
