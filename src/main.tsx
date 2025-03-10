@@ -13,7 +13,7 @@ if (!PUBLISHABLE_KEY) {
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY || "pk_test_placeholder"}>
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY || "pk_test_ZXRoaWNhbC1za2luay04Mi5jbGVyay5hY2NvdW50cy5kZXYk"}>
       <App />
     </ClerkProvider>
   </React.StrictMode>

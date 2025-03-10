@@ -58,6 +58,7 @@ export function useAffiliation() {
     clearReferralCode: () => {
       localStorage.removeItem('referralCode');
       setReferralCode(null);
-    }
+    },
+    getUserAffiliateCode: () => isSignedIn && user ? user.id.substring(0, 8) : null,
   };
 }

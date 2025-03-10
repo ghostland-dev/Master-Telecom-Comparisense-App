@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useUser, useClerk } from "@clerk/clerk-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,15 +13,34 @@ import {
   CardTitle 
 } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { UserCircle, Copy, Users, Share2 } from "lucide-react";
+import { UserCircle, Copy, Users, Share2, Award } from "lucide-react";
+import { useAffiliation } from "@/hooks/useAffiliation";
 
 const Profile = () => {
   const { user } = useUser();
   const { signOut } = useClerk();
   const { toast } = useToast();
-  const [affiliateCode] = useState(user?.id?.substring(0, 8) || "");
+  const { getUserAffiliateCode, isReferred, referralCode } = useAffiliation();
+  const [affiliateCode] = useState(getUserAffiliateCode() || "");
+  const [stats, setStats] = useState({
+    totalReferrals: 0,
+    pendingRewards: 0,
+    claimedRewards: 0
+  });
   
   const referralLink = `${window.location.origin}?ref=${affiliateCode}`;
+
+  // Load affiliate stats (placeholder for demo)
+  useEffect(() => {
+    if (user) {
+      // In a real implementation, you would fetch this from your backend
+      setStats({
+        totalReferrals: 0,
+        pendingRewards: 0,
+        claimedRewards: 0
+      });
+    }
+  }, [user]);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -62,6 +81,14 @@ const Profile = () => {
               <Label htmlFor="email">Email</Label>
               <Input id="email" value={user.primaryEmailAddress?.emailAddress || ""} readOnly className="mt-1" />
             </div>
+            {isReferred && (
+              <div className="pt-2">
+                <p className="text-sm text-muted-foreground flex items-center">
+                  <Award className="h-4 w-4 mr-2 text-primary" />
+                  Vous avez été parrainé par: <span className="font-medium ml-1">{referralCode}</span>
+                </p>
+              </div>
+            )}
           </CardContent>
           <CardFooter>
             <Button variant="destructive" onClick={() => signOut()}>
@@ -125,13 +152,30 @@ const Profile = () => {
       <div className="mt-8">
         <Card>
           <CardHeader>
-            <CardTitle>Historique des parrainages</CardTitle>
+            <CardTitle>Statistiques d'affiliation</CardTitle>
             <CardDescription>Suivez vos parrainages et récompenses</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="text-center py-8 text-muted-foreground">
-              Vous n'avez pas encore de parrainages. Partagez votre lien pour commencer!
-            </div>
+            {stats.totalReferrals === 0 ? (
+              <div className="text-center py-8 text-muted-foreground">
+                Vous n'avez pas encore de parrainages. Partagez votre lien pour commencer!
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-muted p-4 rounded-lg text-center">
+                  <p className="text-2xl font-bold">{stats.totalReferrals}</p>
+                  <p className="text-sm text-muted-foreground">Parrainages</p>
+                </div>
+                <div className="bg-muted p-4 rounded-lg text-center">
+                  <p className="text-2xl font-bold">{stats.pendingRewards}</p>
+                  <p className="text-sm text-muted-foreground">Points en attente</p>
+                </div>
+                <div className="bg-muted p-4 rounded-lg text-center">
+                  <p className="text-2xl font-bold">{stats.claimedRewards}</p>
+                  <p className="text-sm text-muted-foreground">Points réclamés</p>
+                </div>
+              </div>
+            )}
           </CardContent>
         </Card>
       </div>
