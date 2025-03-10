@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { PhonePlan, FilterOptions, initialFilterOptions } from '@/data/plans';
-import FilterBar from './FilterBar';
+import FilterBar from '@/components/filters/FilterBar';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
 
