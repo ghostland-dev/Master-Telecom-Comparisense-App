@@ -4,14 +4,28 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
 import Index from "./pages/Index";
 import Plans from "./pages/Plans";
 import Providers from "./pages/Providers";
 import Compare from "./pages/Compare";
 import Guides from "./pages/Guides";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
+
+// Component to handle protected routes
+const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <>
+      <SignedIn>{children}</SignedIn>
+      <SignedOut>
+        <RedirectToSignIn />
+      </SignedOut>
+    </>
+  );
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -25,6 +39,11 @@ const App = () => (
           <Route path="/operateurs" element={<Providers />} />
           <Route path="/comparer" element={<Compare />} />
           <Route path="/guides" element={<Guides />} />
+          <Route path="/profile" element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          } />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
