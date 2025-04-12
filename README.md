@@ -1,7 +1,3 @@
-Here is the README template for the project based on the design you uploaded:
-
----
-
 # CompareSense
 
 CompareSense is a web application that helps users compare mobile phone plans in France. It allows users to find the best deals on mobile networks based on their needs, with transparent comparisons between operators. The platform offers features like real-time plan comparisons, price sorting, and filter options to help users make informed decisions.
