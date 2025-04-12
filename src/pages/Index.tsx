@@ -1,11 +1,12 @@
 
 import { useRef } from 'react';
-import Header from '@/components/Header';
+ 
 import Hero from '@/components/Hero';
 import PlanComparison from '@/components/PlanComparison';
 import FeaturedPlan from '@/components/FeaturedPlan';
 import Footer from '@/components/Footer';
 import { phonePlans } from '@/data/plans';
+import Header from '@/components/header';
 
 const Index = () => {
   const plansRef = useRef<HTMLDivElement>(null);

@@ -1,69 +1,99 @@
-# Welcome to your Lovable project
+Here is the README template for the project based on the design you uploaded:
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/084622eb-5267-4d7b-a0dc-401d3d697854
+# CompareSense
 
-## How can I edit this code?
+CompareSense is a web application that helps users compare mobile phone plans in France. It allows users to find the best deals on mobile networks based on their needs, with transparent comparisons between operators. The platform offers features like real-time plan comparisons, price sorting, and filter options to help users make informed decisions.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Mobile Plan Comparison**: Compare the best phone plans and networks to suit your needs.
+- **Featured Plans**: Highlight the best mobile plans offering the best value for money.
+- **Price Sorting & Filtering**: Easily sort and filter mobile plans by price, data, and contract length.
+- **Personalized Recommendations**: Find personalized plans based on your usage and preferences.
+- **Multilingual Support**: Available in French to ensure maximum accessibility.
+- **Newsletter Signup**: Stay up to date with the latest offers and plans by subscribing to the newsletter.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/084622eb-5267-4d7b-a0dc-401d3d697854) and start prompting.
+## Technologies
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**:
+  - React.js
+  - Tailwind CSS
+  - Vite for fast builds
+  - React Router for navigation
+- **Backend**:
+  - Node.js (Optional if backend APIs are required)
+  - REST API (if applicable for fetching mobile plans)
+- **Others**:
+  - Vercel for hosting
+  - Unsplash for stock images
 
-**Use your preferred IDE**
+## Installation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+To run the project locally, follow these steps:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
 
-Follow these steps:
+2. Navigate to the project directory:
+   ```bash
+   cd CompareSense
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+The application will be accessible at `http://localhost:3000`.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Configuration
+
+- **Environment Variables**: If you're using any external APIs to fetch mobile plan data, ensure to set your API keys in the `.env` file.
+- **Vite Configuration**: Adjust Vite config files if necessary for production builds or optimizations.
+
+## Screenshots
+
+![alt text](image.png)
+
+## Footer Links
+
+- **Company Info**:
+  - About Us
+  - Careers
+  - Blog
+- **Resources**:
+  - Guides
+  - FAQ
+- **Legal**:
+  - Terms & Conditions
+  - Privacy Policy
+  - Cookies Policy
+
+## Contributing
+
+If you'd like to contribute to the development of CompareSense, feel free to fork the repository and create pull requests with improvements or bug fixes.
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Developer
+
+- **Developer**: Ismail MOUYAHADA
+
+## Footer
+
+```
+© 2025 CompareSense. All rights reserved.
 ```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/084622eb-5267-4d7b-a0dc-401d3d697854) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+ 

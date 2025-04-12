@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { toast } from "sonner";
-import Header from '@/components/Header';
+ 
 import Footer from '@/components/Footer';
 import PlanComparison from '@/components/PlanComparison';
 import ComparisonSummary from '@/components/ComparisonSummary';
@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Heart, Share2, RefreshCw, Save } from 'lucide-react';
 import { getSavedComparisons, saveComparison } from '@/lib/comparisonUtils';
+import Header from '@/components/header';
 
 const Compare = () => {
   const [selectedPlans, setSelectedPlans] = useState<PhonePlan[]>([]);

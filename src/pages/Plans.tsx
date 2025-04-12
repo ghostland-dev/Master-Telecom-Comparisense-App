@@ -1,5 +1,5 @@
 
-import Header from '@/components/Header';
+import Header from '@/components/header';
 import Footer from '@/components/Footer';
 import PlanComparison from '@/components/PlanComparison';
 import { phonePlans } from '@/data/plans';
